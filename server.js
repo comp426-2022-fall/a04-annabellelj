@@ -19,9 +19,9 @@ app.get("app/roll/",(req,res) => {
 });
 
 app.post('/app/roll/',(req,res) => {
-    let sides = parseInt(req.body.sides);
-    let dice = parseInt(req.body.dice);
-    let rolls = parseInt(req.body.rolls);
+    const sides = parseInt(req.body.sides);
+    const dice = parseInt(req.body.dice);
+    const rolls = parseInt(req.body.rolls);
     console.log(roll(sides,dice,rolls));
     res.send(roll(sides,dice,rolls));
 });
@@ -35,7 +35,11 @@ app.get('/app/roll/:sides/:dice/',(req,res) => {
 });
 
 app.get('/app/roll/:sides/:dice/:rolls',(req,res) => {
-    res.send(roll(parseInt(req.params.sides),roll(parseInt(req.params.dice),roll(parseInt(req.params.rolls)))));
+    const sides = parseInt(req.params.sides);
+    const dice = parseInt(req.params.dice);
+    const rolls = parseInt(req.params.rolls);
+    console.log(roll(sides,dice,rolls));
+    res.send(roll(sides,dice,rolls));
 });
 
 
