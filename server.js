@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 app.get('/app/',(req,res) => {
-    res.send("200 OK");
+    res.send.status("200 OK");
 });
 
 app.get("app/roll",(req,res) => {
@@ -36,7 +36,7 @@ app.get('/app/roll/:sides/:dice/:rolls',(req,res) => {
 
 
 
-app.get('*',(req,res) => {
+app.use('*',(req,res) => {
     res.status(404).send('404 NOT FOUND');
 });
 
