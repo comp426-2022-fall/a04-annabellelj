@@ -7,13 +7,14 @@ const app = express();
 const args = minimist(process.argv.slice(2));
 const port = args.port || 5000;
 
+app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 app.get('/app/',(req,res) => {
     res.send("200 OK");
 });
 
-app.get('app/roll/',(req,res) => {
+app.get("app/roll/",(req,res) => {
     res.send(roll(6,2,1));
 });
 
@@ -22,7 +23,7 @@ app.post('/app/roll/',(req,res) => {
     const dice = parseInt(req.body.dice);
     const rolls = parseInt(req.body.rolls);
     console.log(roll(sides,dice,rolls));
-    res.send(roll(sides,dice,rolls));
+    res.send(roll(parseInt(req.body.sides) || 6, parseInt(req.body.dice) || 2, parseInt(req.body.rolls) || 1);
 });
 
 app.get('/app/roll/:sides/',(req,res) => {
@@ -35,7 +36,7 @@ app.get('/app/roll/:sides/:dice/',(req,res) => {
 
 app.get('/app/roll/:sides/:dice/:rolls',(req,res) => {
     const sides = parseInt(req.params.sides);
-    const dice = parseInt(req.params.dice);
+    const dice = dparseInt(req.params.dice);
     const rolls = parseInt(req.params.rolls);
     console.log(roll(sides,dice,rolls));
     res.send(roll(sides,dice,rolls));
