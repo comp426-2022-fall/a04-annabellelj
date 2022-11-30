@@ -23,11 +23,15 @@ app.get('/app/roll/',(req,res) => {
 });
 
 app.get('/app/roll/:sides/',(req,res) => {
-    res.send(roll(parseInt(req.body.sides),2,1));
+    res.send(roll(parseInt(req.params.sides),2,1));
 });
 
 app.get('/app/roll/:sides/:dice/',(req,res) => {
     res.send(roll(parseInt(req.params.dice),1));
+});
+
+app.get('/app/roll/:sides/:dice/:rolls/',(req,res) => {
+    res.send(roll(parseInt(req.params.sides),roll(parseInt(req.params.dice),roll(parseInt(req.params.rolls)));
 });
 
 app.get('*',(req,res) => {
