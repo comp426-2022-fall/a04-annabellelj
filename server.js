@@ -7,7 +7,6 @@ const app = express();
 const args = minimist(process.argv.slice(2));
 const port = args.port || 5000;
 
-app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 app.get('/app/',(req,res) => {
@@ -16,12 +15,12 @@ app.get('/app/',(req,res) => {
 
 app.get("app/roll/",(req,res) => {
     console.log(roll(6,2,1));
-    res.send((roll(6,2,1)));
+    res.send(roll(6,2,1));
 });
 
 app.post('/app/roll/',(req,res) => {
-    console.log(roll(parseInt(req.body.sides), parseInt(req.body.dice), parseInt(req.body.rolls)));
-    res.send(roll(parseInt(req.body.sides), parseInt(req.body.dice), parseInt(req.body.rolls)));
+    console.log(roll((parseInt(req.body.sides)), (parseInt(req.body.dice)), (parseInt(req.body.rolls))));
+    res.send(roll((parseInt(req.body.sides)), (parseInt(req.body.dice)), (parseInt(req.body.rolls))));
 });
 
 app.get('/app/roll/:sides/',(req,res) => {
