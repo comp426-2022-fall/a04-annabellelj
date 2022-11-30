@@ -1,0 +1,22 @@
+{
+  "name": "a04-annabellelj",
+  "version": "1.0.0",
+  "description": "This assignment will help you stand up a web API using Express and the module that you produced for a03.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2022-fall/a04-annabellelj.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/comp426-2022-fall/a04-annabellelj/issues"
+  },
+  "homepage": "https://github.com/comp426-2022-fall/a04-annabellelj#readme",
+  "dependencies": {
+    "minimist": "^1.2.7"
+  }
+}
