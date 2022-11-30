@@ -14,13 +14,14 @@ app.get('/app/',(req,res) => {
     res.send("200 OK");
 });
 
-app.get("app/roll/",(req,res) => {
+app.get("/app/roll/",(req,res) => {
     res.send(roll(6,2,1));
 });
 
-app.post('/app/roll/',(req,res) => {
-    res.send(roll(parseInt(req.body.sides) || 6, parseInt(req.body.dice) || 2, parseInt(req.body.rolls) || 1));
+app.get('/app/roll/',(req,res) => {
+    res.send(parseInt(req.body.sides), parseInt(req.body.dice), parseInt(req.body.rolls));
 });
+
 
 app.get('/app/roll/:sides/',(req,res) => {
     res.send(roll(parseInt(req.params.sides),2,1));
